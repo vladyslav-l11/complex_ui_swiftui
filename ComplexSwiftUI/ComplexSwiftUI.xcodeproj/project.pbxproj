@@ -8,17 +8,64 @@
 
 /* Begin PBXBuildFile section */
 		272802BB284897B20092A6EF /* ComplexSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272802BA284897B20092A6EF /* ComplexSwiftUIApp.swift */; };
-		272802BD284897B20092A6EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272802BC284897B20092A6EF /* ContentView.swift */; };
+		272802BD284897B20092A6EF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272802BC284897B20092A6EF /* HomeView.swift */; };
 		272802BF284897B40092A6EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 272802BE284897B40092A6EF /* Assets.xcassets */; };
 		272802C2284897B40092A6EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 272802C1284897B40092A6EF /* Preview Assets.xcassets */; };
+		272802CB2848A7E20092A6EF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272802CA2848A7E20092A6EF /* User.swift */; };
+		272802CD2848A8710092A6EF /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272802CC2848A8710092A6EF /* Place.swift */; };
+		272802D12848AD5E0092A6EF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272802D02848AD5E0092A6EF /* HomeViewModel.swift */; };
+		272802D42848AEA30092A6EF /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272802D32848AEA30092A6EF /* PlaceView.swift */; };
+		272802D62848B0CA0092A6EF /* ListPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272802D52848B0CA0092A6EF /* ListPlaceView.swift */; };
+		272802EB2848EBE50092A6EF /* Metropolis-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 272802D92848EBE50092A6EF /* Metropolis-Black.otf */; };
+		272802EC2848EBE50092A6EF /* Metropolis-ExtraLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 272802DA2848EBE50092A6EF /* Metropolis-ExtraLightItalic.otf */; };
+		272802ED2848EBE50092A6EF /* Metropolis-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 272802DB2848EBE50092A6EF /* Metropolis-BlackItalic.otf */; };
+		272802EE2848EBE50092A6EF /* Metropolis-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 272802DC2848EBE50092A6EF /* Metropolis-ExtraBoldItalic.otf */; };
+		272802EF2848EBE50092A6EF /* Metropolis-SemiBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 272802DD2848EBE50092A6EF /* Metropolis-SemiBoldItalic.otf */; };
+		272802F02848EBE50092A6EF /* Metropolis-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 272802DE2848EBE50092A6EF /* Metropolis-ExtraBold.otf */; };
+		272802F12848EBE50092A6EF /* Metropolis-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 272802DF2848EBE50092A6EF /* Metropolis-ExtraLight.otf */; };
+		272802F22848EBE50092A6EF /* Metropolis-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 272802E02848EBE50092A6EF /* Metropolis-ThinItalic.otf */; };
+		272802F32848EBE50092A6EF /* Metropolis-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 272802E12848EBE50092A6EF /* Metropolis-RegularItalic.otf */; };
+		272802F42848EBE50092A6EF /* Metropolis-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 272802E22848EBE50092A6EF /* Metropolis-Bold.otf */; };
+		272802F52848EBE50092A6EF /* Metropolis-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 272802E32848EBE50092A6EF /* Metropolis-Light.otf */; };
+		272802F62848EBE50092A6EF /* Metropolis-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 272802E42848EBE50092A6EF /* Metropolis-MediumItalic.otf */; };
+		272802F72848EBE50092A6EF /* Metropolis-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 272802E52848EBE50092A6EF /* Metropolis-Medium.otf */; };
+		272802F82848EBE50092A6EF /* Metropolis-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 272802E62848EBE50092A6EF /* Metropolis-Regular.otf */; };
+		272802F92848EBE50092A6EF /* Metropolis-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 272802E72848EBE50092A6EF /* Metropolis-Thin.otf */; };
+		272802FA2848EBE50092A6EF /* Metropolis-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 272802E82848EBE50092A6EF /* Metropolis-LightItalic.otf */; };
+		272802FB2848EBE50092A6EF /* Metropolis-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 272802E92848EBE50092A6EF /* Metropolis-BoldItalic.otf */; };
+		272802FC2848EBE50092A6EF /* Metropolis-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 272802EA2848EBE50092A6EF /* Metropolis-SemiBold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		272802B7284897B20092A6EF /* ComplexSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComplexSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		272802BA284897B20092A6EF /* ComplexSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexSwiftUIApp.swift; sourceTree = "<group>"; };
-		272802BC284897B20092A6EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		272802BC284897B20092A6EF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		272802BE284897B40092A6EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		272802C1284897B40092A6EF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		272802CA2848A7E20092A6EF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		272802CC2848A8710092A6EF /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		272802D02848AD5E0092A6EF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		272802D32848AEA30092A6EF /* PlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceView.swift; sourceTree = "<group>"; };
+		272802D52848B0CA0092A6EF /* ListPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPlaceView.swift; sourceTree = "<group>"; };
+		272802D72848EB6A0092A6EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		272802D92848EBE50092A6EF /* Metropolis-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Black.otf"; sourceTree = "<group>"; };
+		272802DA2848EBE50092A6EF /* Metropolis-ExtraLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-ExtraLightItalic.otf"; sourceTree = "<group>"; };
+		272802DB2848EBE50092A6EF /* Metropolis-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-BlackItalic.otf"; sourceTree = "<group>"; };
+		272802DC2848EBE50092A6EF /* Metropolis-ExtraBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-ExtraBoldItalic.otf"; sourceTree = "<group>"; };
+		272802DD2848EBE50092A6EF /* Metropolis-SemiBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-SemiBoldItalic.otf"; sourceTree = "<group>"; };
+		272802DE2848EBE50092A6EF /* Metropolis-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-ExtraBold.otf"; sourceTree = "<group>"; };
+		272802DF2848EBE50092A6EF /* Metropolis-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-ExtraLight.otf"; sourceTree = "<group>"; };
+		272802E02848EBE50092A6EF /* Metropolis-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-ThinItalic.otf"; sourceTree = "<group>"; };
+		272802E12848EBE50092A6EF /* Metropolis-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-RegularItalic.otf"; sourceTree = "<group>"; };
+		272802E22848EBE50092A6EF /* Metropolis-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Bold.otf"; sourceTree = "<group>"; };
+		272802E32848EBE50092A6EF /* Metropolis-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Light.otf"; sourceTree = "<group>"; };
+		272802E42848EBE50092A6EF /* Metropolis-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-MediumItalic.otf"; sourceTree = "<group>"; };
+		272802E52848EBE50092A6EF /* Metropolis-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Medium.otf"; sourceTree = "<group>"; };
+		272802E62848EBE50092A6EF /* Metropolis-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Regular.otf"; sourceTree = "<group>"; };
+		272802E72848EBE50092A6EF /* Metropolis-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-Thin.otf"; sourceTree = "<group>"; };
+		272802E82848EBE50092A6EF /* Metropolis-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-LightItalic.otf"; sourceTree = "<group>"; };
+		272802E92848EBE50092A6EF /* Metropolis-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-BoldItalic.otf"; sourceTree = "<group>"; };
+		272802EA2848EBE50092A6EF /* Metropolis-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-SemiBold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +98,11 @@
 		272802B9284897B20092A6EF /* ComplexSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				272802D82848EB9F0092A6EF /* Fonts */,
+				272802D72848EB6A0092A6EF /* Info.plist */,
+				272802C92848A7530092A6EF /* Entities */,
+				272802C828489F0D0092A6EF /* Home */,
 				272802BA284897B20092A6EF /* ComplexSwiftUIApp.swift */,
-				272802BC284897B20092A6EF /* ContentView.swift */,
 				272802BE284897B40092A6EF /* Assets.xcassets */,
 				272802C0284897B40092A6EF /* Preview Content */,
 			);
@@ -65,6 +115,59 @@
 				272802C1284897B40092A6EF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		272802C828489F0D0092A6EF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				272802D22848AE8C0092A6EF /* Views */,
+				272802BC284897B20092A6EF /* HomeView.swift */,
+				272802D02848AD5E0092A6EF /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		272802C92848A7530092A6EF /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				272802CA2848A7E20092A6EF /* User.swift */,
+				272802CC2848A8710092A6EF /* Place.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		272802D22848AE8C0092A6EF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				272802D32848AEA30092A6EF /* PlaceView.swift */,
+				272802D52848B0CA0092A6EF /* ListPlaceView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		272802D82848EB9F0092A6EF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				272802D92848EBE50092A6EF /* Metropolis-Black.otf */,
+				272802DB2848EBE50092A6EF /* Metropolis-BlackItalic.otf */,
+				272802E22848EBE50092A6EF /* Metropolis-Bold.otf */,
+				272802E92848EBE50092A6EF /* Metropolis-BoldItalic.otf */,
+				272802DE2848EBE50092A6EF /* Metropolis-ExtraBold.otf */,
+				272802DC2848EBE50092A6EF /* Metropolis-ExtraBoldItalic.otf */,
+				272802DF2848EBE50092A6EF /* Metropolis-ExtraLight.otf */,
+				272802DA2848EBE50092A6EF /* Metropolis-ExtraLightItalic.otf */,
+				272802E32848EBE50092A6EF /* Metropolis-Light.otf */,
+				272802E82848EBE50092A6EF /* Metropolis-LightItalic.otf */,
+				272802E52848EBE50092A6EF /* Metropolis-Medium.otf */,
+				272802E42848EBE50092A6EF /* Metropolis-MediumItalic.otf */,
+				272802E62848EBE50092A6EF /* Metropolis-Regular.otf */,
+				272802E12848EBE50092A6EF /* Metropolis-RegularItalic.otf */,
+				272802EA2848EBE50092A6EF /* Metropolis-SemiBold.otf */,
+				272802DD2848EBE50092A6EF /* Metropolis-SemiBoldItalic.otf */,
+				272802E72848EBE50092A6EF /* Metropolis-Thin.otf */,
+				272802E02848EBE50092A6EF /* Metropolis-ThinItalic.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +228,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				272802F22848EBE50092A6EF /* Metropolis-ThinItalic.otf in Resources */,
+				272802ED2848EBE50092A6EF /* Metropolis-BlackItalic.otf in Resources */,
+				272802F42848EBE50092A6EF /* Metropolis-Bold.otf in Resources */,
+				272802F52848EBE50092A6EF /* Metropolis-Light.otf in Resources */,
+				272802EE2848EBE50092A6EF /* Metropolis-ExtraBoldItalic.otf in Resources */,
+				272802EF2848EBE50092A6EF /* Metropolis-SemiBoldItalic.otf in Resources */,
+				272802F62848EBE50092A6EF /* Metropolis-MediumItalic.otf in Resources */,
 				272802C2284897B40092A6EF /* Preview Assets.xcassets in Resources */,
 				272802BF284897B40092A6EF /* Assets.xcassets in Resources */,
+				272802EB2848EBE50092A6EF /* Metropolis-Black.otf in Resources */,
+				272802F82848EBE50092A6EF /* Metropolis-Regular.otf in Resources */,
+				272802F92848EBE50092A6EF /* Metropolis-Thin.otf in Resources */,
+				272802F12848EBE50092A6EF /* Metropolis-ExtraLight.otf in Resources */,
+				272802F32848EBE50092A6EF /* Metropolis-RegularItalic.otf in Resources */,
+				272802EC2848EBE50092A6EF /* Metropolis-ExtraLightItalic.otf in Resources */,
+				272802FB2848EBE50092A6EF /* Metropolis-BoldItalic.otf in Resources */,
+				272802FC2848EBE50092A6EF /* Metropolis-SemiBold.otf in Resources */,
+				272802F72848EBE50092A6EF /* Metropolis-Medium.otf in Resources */,
+				272802FA2848EBE50092A6EF /* Metropolis-LightItalic.otf in Resources */,
+				272802F02848EBE50092A6EF /* Metropolis-ExtraBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +258,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				272802BD284897B20092A6EF /* ContentView.swift in Sources */,
+				272802D42848AEA30092A6EF /* PlaceView.swift in Sources */,
+				272802BD284897B20092A6EF /* HomeView.swift in Sources */,
+				272802D62848B0CA0092A6EF /* ListPlaceView.swift in Sources */,
 				272802BB284897B20092A6EF /* ComplexSwiftUIApp.swift in Sources */,
+				272802CB2848A7E20092A6EF /* User.swift in Sources */,
+				272802D12848AD5E0092A6EF /* HomeViewModel.swift in Sources */,
+				272802CD2848A8710092A6EF /* Place.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,9 +398,11 @@
 				DEVELOPMENT_TEAM = L8252FQ78N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ComplexSwiftUI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -301,9 +429,11 @@
 				DEVELOPMENT_TEAM = L8252FQ78N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ComplexSwiftUI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
