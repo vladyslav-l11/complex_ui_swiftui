@@ -12,11 +12,9 @@ struct HomeView: View {
     let viewModel = HomeViewModel()
     
     var body: some View {
-        ScrollView {
-            LazyVStack {
-                
-            }
-        }
+        VStack {
+            ListPlaceView(userName: "Vlad", title: "Wanna plan your next trip?", placeList: viewModel.placeList)
+        }.ignoresSafeArea()
     }
 }
 
