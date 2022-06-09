@@ -9,12 +9,29 @@ import SwiftUI
 
 struct HomeView: View {
     
+    private enum C {
+        static let searchButtonSize: CGFloat = 27
+    }
+    
     let viewModel = HomeViewModel()
     
     var body: some View {
-        VStack {
-            ListPlaceView(userName: "Vlad", title: "Wanna plan your next trip?", placeList: viewModel.placeList)
-        }.ignoresSafeArea()
+        NavigationView {
+            ScrollView {
+                LazyVStack {
+                    ListPlaceView(userName:     viewModel.user.name, title: "Wanna plan your next trip?", placeList:  viewModel.placeList)
+                    ListCategoryView(categories: viewModel.categoryList) .padding(.top, 40)
+                }
+            }
+            .ignoresSafeArea()
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {}) {
+                        Image(uiImage: UIImage(named: "icSearch").nonNil)
+                    }.frame(width: C.searchButtonSize, height: C.searchButtonSize)
+                }
+            }
+        }
     }
 }
 

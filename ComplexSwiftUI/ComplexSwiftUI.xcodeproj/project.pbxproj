@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		270F230A2850B6D800C8FC2B /* ListCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270F23092850B6D800C8FC2B /* ListCategoryView.swift */; };
+		270F230C2850B74900C8FC2B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270F230B2850B74900C8FC2B /* Category.swift */; };
+		271BC95E284F7A1700D3CFFF /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BC95D284F7A1700D3CFFF /* CategoryView.swift */; };
 		272802BB284897B20092A6EF /* ComplexSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272802BA284897B20092A6EF /* ComplexSwiftUIApp.swift */; };
 		272802BD284897B20092A6EF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272802BC284897B20092A6EF /* HomeView.swift */; };
 		272802BF284897B40092A6EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 272802BE284897B40092A6EF /* Assets.xcassets */; };
@@ -34,9 +37,13 @@
 		272802FA2848EBE50092A6EF /* Metropolis-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 272802E82848EBE50092A6EF /* Metropolis-LightItalic.otf */; };
 		272802FB2848EBE50092A6EF /* Metropolis-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 272802E92848EBE50092A6EF /* Metropolis-BoldItalic.otf */; };
 		272802FC2848EBE50092A6EF /* Metropolis-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 272802EA2848EBE50092A6EF /* Metropolis-SemiBold.otf */; };
+		274A4E952852158F0083593D /* Optional+Unwrapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274A4E942852158F0083593D /* Optional+Unwrapped.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		270F23092850B6D800C8FC2B /* ListCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCategoryView.swift; sourceTree = "<group>"; };
+		270F230B2850B74900C8FC2B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		271BC95D284F7A1700D3CFFF /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		272802B7284897B20092A6EF /* ComplexSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComplexSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		272802BA284897B20092A6EF /* ComplexSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexSwiftUIApp.swift; sourceTree = "<group>"; };
 		272802BC284897B20092A6EF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -66,6 +73,7 @@
 		272802E82848EBE50092A6EF /* Metropolis-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-LightItalic.otf"; sourceTree = "<group>"; };
 		272802E92848EBE50092A6EF /* Metropolis-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-BoldItalic.otf"; sourceTree = "<group>"; };
 		272802EA2848EBE50092A6EF /* Metropolis-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-SemiBold.otf"; sourceTree = "<group>"; };
+		274A4E942852158F0083593D /* Optional+Unwrapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrapped.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		271BC95B284F77EA00D3CFFF /* PlaceViews */ = {
+			isa = PBXGroup;
+			children = (
+				272802D32848AEA30092A6EF /* PlaceView.swift */,
+				272802D52848B0CA0092A6EF /* ListPlaceView.swift */,
+			);
+			path = PlaceViews;
+			sourceTree = "<group>";
+		};
+		271BC95C284F79DB00D3CFFF /* CategoryViews */ = {
+			isa = PBXGroup;
+			children = (
+				271BC95D284F7A1700D3CFFF /* CategoryView.swift */,
+				270F23092850B6D800C8FC2B /* ListCategoryView.swift */,
+			);
+			path = CategoryViews;
+			sourceTree = "<group>";
+		};
 		272802AE284897B20092A6EF = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +124,7 @@
 		272802B9284897B20092A6EF /* ComplexSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				274A4E932852157D0083593D /* Extensions */,
 				272802D82848EB9F0092A6EF /* Fonts */,
 				272802D72848EB6A0092A6EF /* Info.plist */,
 				272802C92848A7530092A6EF /* Entities */,
@@ -132,6 +159,7 @@
 			children = (
 				272802CA2848A7E20092A6EF /* User.swift */,
 				272802CC2848A8710092A6EF /* Place.swift */,
+				270F230B2850B74900C8FC2B /* Category.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -139,8 +167,8 @@
 		272802D22848AE8C0092A6EF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				272802D32848AEA30092A6EF /* PlaceView.swift */,
-				272802D52848B0CA0092A6EF /* ListPlaceView.swift */,
+				271BC95C284F79DB00D3CFFF /* CategoryViews */,
+				271BC95B284F77EA00D3CFFF /* PlaceViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,6 +196,14 @@
 				272802E02848EBE50092A6EF /* Metropolis-ThinItalic.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		274A4E932852157D0083593D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				274A4E942852158F0083593D /* Optional+Unwrapped.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,13 +294,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				270F230A2850B6D800C8FC2B /* ListCategoryView.swift in Sources */,
+				270F230C2850B74900C8FC2B /* Category.swift in Sources */,
 				272802D42848AEA30092A6EF /* PlaceView.swift in Sources */,
 				272802BD284897B20092A6EF /* HomeView.swift in Sources */,
 				272802D62848B0CA0092A6EF /* ListPlaceView.swift in Sources */,
 				272802BB284897B20092A6EF /* ComplexSwiftUIApp.swift in Sources */,
 				272802CB2848A7E20092A6EF /* User.swift in Sources */,
 				272802D12848AD5E0092A6EF /* HomeViewModel.swift in Sources */,
+				271BC95E284F7A1700D3CFFF /* CategoryView.swift in Sources */,
 				272802CD2848A8710092A6EF /* Place.swift in Sources */,
+				274A4E952852158F0083593D /* Optional+Unwrapped.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
