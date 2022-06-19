@@ -19,7 +19,7 @@ struct HomeView: View {
         NavigationView {
             ScrollView {
                 LazyVStack {
-                    ListPlaceView(userName:     viewModel.user.name, title: "Wanna plan your next trip?", placeList:  viewModel.placeList)
+                    ListPlaceView(userName:     viewModel.user.name, title: "Wanna plan your next trip?", placeList: viewModel.placeList)
                     ListCategoryView(categories: viewModel.categoryList) .padding(.top, 40)
                     ListCategoryItemView(categoryItems: viewModel.categoryItemList)
                         .padding(.top, 40)
@@ -33,6 +33,9 @@ struct HomeView: View {
                     }.frame(width: C.searchButtonSize, height: C.searchButtonSize)
                 }
             }
+            .overlay(ListTabView(tabs: viewModel.tabs)
+                        .padding(.horizontal, 20)
+                        .padding(.bottom, 14), alignment: .bottom)
         }
     }
 }

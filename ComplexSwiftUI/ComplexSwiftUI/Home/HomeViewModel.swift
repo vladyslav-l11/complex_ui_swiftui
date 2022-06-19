@@ -26,4 +26,10 @@ final class HomeViewModel {
         CategoryItem(name: "KFC", rating: 3.9, image: UIImage(named: "icFastFood2")),
         CategoryItem(name: "StreetSide Cafe", rating: 4.0, image: UIImage(named: "icFastFood3"))
     ]
+    let tabs = [
+        Tab(image: UIImage(named: "icHouse"), selectedImage: UIImage(named: "icHouseSelected")),
+        Tab(image: UIImage(named: "icLove"), selectedImage: UIImage(named: "icLoveSelected")),
+        Tab(image: UIImage(named: "icDate"), selectedImage: UIImage(named: "icDateSelected")),
+        Tab(image: UIImage(named: "icChat"), selectedImage: UIImage(named: "icChatSelected"))
+    ]
 }
