@@ -21,6 +21,8 @@ struct HomeView: View {
                 LazyVStack {
                     ListPlaceView(userName:     viewModel.user.name, title: "Wanna plan your next trip?", placeList:  viewModel.placeList)
                     ListCategoryView(categories: viewModel.categoryList) .padding(.top, 40)
+                    ListCategoryItemView(categoryItems: viewModel.categoryItemList)
+                        .padding(.top, 40)
                 }
             }
             .ignoresSafeArea()

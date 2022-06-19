@@ -17,7 +17,12 @@ struct ListPlaceView: View {
         ZStack {
             ForEach(placeList.reversed()) { place in
                 if let index = placeList.firstIndex(of: place) {
-                    PlaceView(image: place.image, name: place.name, city: place.city, country: place.country, shouldShowShadow: index == 0)
+                    PlaceView(image: place.image, name: place.name, city: place.city, country: place.country, shouldShowShadow: index == 0,
+                        width: index == placeList.startIndex
+                                      ? UIScreen.main.bounds.width
+                                      : (index == placeList.startIndex + 1
+                                         ? UIScreen.main.bounds.width - 35
+                                         : UIScreen.main.bounds.width - 70))
                         .offset(x: .zero, y: -(-CGFloat(index*12)))
                         .opacity(index == placeList.startIndex
                                  ? 1

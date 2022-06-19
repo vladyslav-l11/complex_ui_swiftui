@@ -21,4 +21,9 @@ final class HomeViewModel {
         Category(name: "Hotels", image: UIImage(named: "icHome"), selectedImage: UIImage(named: "icHomeSelected")),
         Category(name: "Tickets", image: UIImage(named: "icFlight"), selectedImage: UIImage(named: "icFlightSelected"))
     ]
+    let categoryItemList = [
+        CategoryItem(name: "Ritz-Carlton", rating: 4.2, image: UIImage(named: "icFastFood1")),
+        CategoryItem(name: "KFC", rating: 3.9, image: UIImage(named: "icFastFood2")),
+        CategoryItem(name: "StreetSide Cafe", rating: 4.0, image: UIImage(named: "icFastFood3"))
+    ]
 }

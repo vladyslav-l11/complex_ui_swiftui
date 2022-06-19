@@ -38,6 +38,9 @@
 		272802FB2848EBE50092A6EF /* Metropolis-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 272802E92848EBE50092A6EF /* Metropolis-BoldItalic.otf */; };
 		272802FC2848EBE50092A6EF /* Metropolis-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 272802EA2848EBE50092A6EF /* Metropolis-SemiBold.otf */; };
 		274A4E952852158F0083593D /* Optional+Unwrapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274A4E942852158F0083593D /* Optional+Unwrapped.swift */; };
+		27983A1328522311007E941F /* CategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27983A1228522311007E941F /* CategoryItem.swift */; };
+		27983A1828522B4F007E941F /* CategoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27983A1728522B4E007E941F /* CategoryItemView.swift */; };
+		27983A1A28523CFE007E941F /* ListCategoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27983A1928523CFE007E941F /* ListCategoryItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +77,9 @@
 		272802E92848EBE50092A6EF /* Metropolis-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-BoldItalic.otf"; sourceTree = "<group>"; };
 		272802EA2848EBE50092A6EF /* Metropolis-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Metropolis-SemiBold.otf"; sourceTree = "<group>"; };
 		274A4E942852158F0083593D /* Optional+Unwrapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Unwrapped.swift"; sourceTree = "<group>"; };
+		27983A1228522311007E941F /* CategoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItem.swift; sourceTree = "<group>"; };
+		27983A1728522B4E007E941F /* CategoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemView.swift; sourceTree = "<group>"; };
+		27983A1928523CFE007E941F /* ListCategoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCategoryItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		270D6BB6285F788D00628D44 /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TabView;
+			sourceTree = "<group>";
+		};
 		271BC95B284F77EA00D3CFFF /* PlaceViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +173,7 @@
 				272802CA2848A7E20092A6EF /* User.swift */,
 				272802CC2848A8710092A6EF /* Place.swift */,
 				270F230B2850B74900C8FC2B /* Category.swift */,
+				27983A1228522311007E941F /* CategoryItem.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -167,6 +181,8 @@
 		272802D22848AE8C0092A6EF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				270D6BB6285F788D00628D44 /* TabView */,
+				27983A1628522B3A007E941F /* CategoryItemViews */,
 				271BC95C284F79DB00D3CFFF /* CategoryViews */,
 				271BC95B284F77EA00D3CFFF /* PlaceViews */,
 			);
@@ -204,6 +220,15 @@
 				274A4E942852158F0083593D /* Optional+Unwrapped.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		27983A1628522B3A007E941F /* CategoryItemViews */ = {
+			isa = PBXGroup;
+			children = (
+				27983A1728522B4E007E941F /* CategoryItemView.swift */,
+				27983A1928523CFE007E941F /* ListCategoryItemView.swift */,
+			);
+			path = CategoryItemViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,12 +323,15 @@
 				270F230C2850B74900C8FC2B /* Category.swift in Sources */,
 				272802D42848AEA30092A6EF /* PlaceView.swift in Sources */,
 				272802BD284897B20092A6EF /* HomeView.swift in Sources */,
+				27983A1A28523CFE007E941F /* ListCategoryItemView.swift in Sources */,
 				272802D62848B0CA0092A6EF /* ListPlaceView.swift in Sources */,
 				272802BB284897B20092A6EF /* ComplexSwiftUIApp.swift in Sources */,
 				272802CB2848A7E20092A6EF /* User.swift in Sources */,
 				272802D12848AD5E0092A6EF /* HomeViewModel.swift in Sources */,
 				271BC95E284F7A1700D3CFFF /* CategoryView.swift in Sources */,
+				27983A1828522B4F007E941F /* CategoryItemView.swift in Sources */,
 				272802CD2848A8710092A6EF /* Place.swift in Sources */,
+				27983A1328522311007E941F /* CategoryItem.swift in Sources */,
 				274A4E952852158F0083593D /* Optional+Unwrapped.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

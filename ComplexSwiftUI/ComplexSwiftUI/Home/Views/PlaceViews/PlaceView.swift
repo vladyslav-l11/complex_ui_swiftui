@@ -18,12 +18,13 @@ struct PlaceView: View {
     let city: String
     let country: String
     let shouldShowShadow: Bool
+    let width: CGFloat
     
     var body: some View {
             Image(uiImage: image ?? .init())
                 .resizable()
                 .scaledToFill()
-                .frame(width: UIScreen.main.bounds.width, height: 450, alignment: .center)
+                .frame(width: width, height: 450, alignment: .center)
                 .overlay( LinearGradient(gradient: Gradient(colors: [.black.opacity(0.5), .black.opacity(0.3), .clear]), startPoint: .bottom, endPoint: .top).frame(height: shouldShowShadow ? 30 : 0),
                                 alignment: .bottom)
                 .mask(RoundedCorners(cornerRadius: C.cornerRadius, corners: [.bottomRight, .bottomLeft]))
@@ -55,7 +56,7 @@ struct RoundedCorners: Shape {
 struct PlaceView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            PlaceView(image: UIImage(named: "icWood"), name: "Name", city: "City", country: "Country", shouldShowShadow: true)
+            PlaceView(image: UIImage(named: "icWood"), name: "Name", city: "City", country: "Country", shouldShowShadow: true, width: UIScreen.main.bounds.width)
         }
     }
 }
