@@ -15,6 +15,7 @@ struct PlaceInfoView: View {
     }
     
     let place: Place
+    @State private var contentSize: CGSize = .zero
     
     var body: some View {
         Group {
@@ -28,13 +29,20 @@ struct PlaceInfoView: View {
                     .font(.custom("Metropolis-SemiBold", size: 13))
                     .foregroundColor(Color(UIColor(named: "gray1") ?? .init()))
                     .padding(.bottom, 11)
-                ScrollView {
-                    Text(place.description)
-                        .font(.custom("Metropolis-SemiBold", size: 14))
-                        .foregroundColor(Color(UIColor(named: "gray3") ?? .init()))
-                        .lineLimit(nil)
-                }
-                    
+                    ScrollView {
+                        Text(place.description)
+                            .font(.custom("Metropolis-SemiBold", size: 14))
+                            .foregroundColor(Color(UIColor(named: "gray3") ?? .init()))
+                            .lineLimit(nil)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .overlay(
+                                GeometryReader { geo in
+                                    Color.clear.onAppear {
+                                    contentSize = geo.size
+                                    }
+                                }
+                            )
+                    }.frame(height: contentSize.height > UIScreen.main.bounds.height-470 ? UIScreen.main.bounds.height-470 : contentSize.height)
                 
                 HStack(spacing: 14) {
                     Group {
