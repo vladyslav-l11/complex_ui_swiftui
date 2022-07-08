@@ -11,7 +11,7 @@ struct ListPlaceView: View {
     
     let userName: String
     let title: String
-    let placeList: [Place]
+    @State var placeList: [Place]
     
     var body: some View {
         ZStack {
@@ -22,7 +22,7 @@ struct ListPlaceView: View {
                                       ? UIScreen.main.bounds.width
                                       : (index == placeList.startIndex + 1
                                          ? UIScreen.main.bounds.width - 35
-                                         : UIScreen.main.bounds.width - 70))
+                                         : UIScreen.main.bounds.width - 70), delegate: self)
                         .offset(y: -(-CGFloat(index*12)))
                         .opacity(index == placeList.startIndex
                                  ? 1
@@ -32,23 +32,41 @@ struct ListPlaceView: View {
                                        ? 0.3
                                        : 0)))
                 }
-            }.overlay(LinearGradient(gradient: Gradient(colors: [.black.opacity(0.6), .black.opacity(0.5), .black.opacity(0.5), .black.opacity(0.4), .black.opacity(0.3), .clear]), startPoint: .top, endPoint: .bottom)
-                        .frame(height: 55),
-                             alignment: .top)
-                .overlay(VStack(alignment: .leading) {
-                Text("Hello, \(userName)")
-                    .font(.custom("Metropolis-Medium", size: 17))
-                    .padding(.bottom, 2
-                    )
-                Text(title)
-                    .font(.custom("Metropolis-Black", size: 29))
-            }.padding(.leading, 24)
-                        .padding(.trailing, 48)
-                        .padding(.top, 48
-                                )
-                        .foregroundColor(.white)
-                        .multilineTextAlignment(.leading),
-                     alignment: .topLeading)
+            }
+        }
+        .overlay(LinearGradient(gradient: Gradient(colors: [.black.opacity(0.6), .black.opacity(0.5), .black.opacity(0.5), .black.opacity(0.4), .black.opacity(0.3), .clear]), startPoint: .top, endPoint: .bottom)
+                    .frame(height: 55),
+                         alignment: .top)
+        .overlay(VStack(alignment: .leading) {
+            Text("Hello, \(userName)")
+                .font(.custom("Metropolis-Medium", size: 17))
+                .padding(.bottom, 2
+                )
+            Text(title)
+                .font(.custom("Metropolis-Black", size: 29))
+        }
+                    .padding(.leading, 24)
+                    .padding(.trailing, 48)
+                    .padding(.top, 48
+                            )
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.leading),
+                 alignment: .topLeading)
+    }
+}
+
+extension ListPlaceView: PlaceViewDelegate {
+    func didSwiped(_ placeView: PlaceView) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            let firstPlace = placeList.removeFirst()
+            placeList.append(Place(name: firstPlace.name,
+                                   country: firstPlace.country,
+                                   city: firstPlace.city,
+                                   image: firstPlace.image,
+                                   distance: firstPlace.distance,
+                                   description: firstPlace.description,
+                                   hotelsCount: firstPlace.hotelsCount,
+                                   restaurantsCount: firstPlace.restaurantsCount))
         }
     }
 }

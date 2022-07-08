@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+protocol PlaceViewDelegate: Any {
+    func didSwiped(_ placeView: PlaceView)
+}
+
 struct PlaceView: View {
     
     private enum C {
@@ -20,6 +24,7 @@ struct PlaceView: View {
     let place: Place
     let shouldShowShadow: Bool
     let width: CGFloat
+    var delegate: PlaceViewDelegate?
     
     var body: some View {
         NavigationLink(destination: DetailedPlaceView(place: place)) {
@@ -43,15 +48,22 @@ struct PlaceView: View {
                     .multilineTextAlignment(.leading), alignment: .bottomLeading)
                 .ignoresSafeArea()
                 .gesture(DragGesture()
+                            .onChanged({ _ in
+                    if !isDragging {
+                        isDragging = true
+                    }
+                })
                             .updating($additionalOffsetX, body: { value, stateOffset, transaction in
-                    isDragging = true
+                    
                     stateOffset = value.translation.width
                 })
                             .onEnded({ value in
                     if value.translation.width < -(C.screenWidth/2) {
                         endPointX = -C.screenWidth
+                        delegate?.didSwiped(self)
                     } else if value.translation.width >= C.screenWidth/2 {
                         endPointX = C.screenWidth
+                        delegate?.didSwiped(self)
                     }
                     isDragging = false
                 }))

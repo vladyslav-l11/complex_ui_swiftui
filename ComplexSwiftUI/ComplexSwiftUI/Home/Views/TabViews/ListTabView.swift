@@ -20,9 +20,7 @@ struct ListTabView: View {
     @State private var itemSelected: Int = 0
     
     var body: some View {
-        AnyView {
-            
-        }
+        AnyView {}
         .ignoresSafeArea()
         .frame(width: C.width, height: C.height)
         .background(RoundedRectangle(cornerRadius: C.radius)
