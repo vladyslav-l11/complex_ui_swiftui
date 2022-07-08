@@ -23,5 +23,7 @@
 		<string>Metropolis-Thin.otf</string>
 		<string>Metropolis-ThinItalic.otf</string>
 	</array>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
 </dict>
 </plist>

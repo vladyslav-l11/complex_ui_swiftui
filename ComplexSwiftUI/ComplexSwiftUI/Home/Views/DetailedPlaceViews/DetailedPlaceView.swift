@@ -13,7 +13,7 @@ struct DetailedPlaceView: View {
         static let backButtonSize: CGFloat = 27
     }
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.presentationMode) var presentationMode
     
     let place: Place
     
@@ -29,16 +29,20 @@ struct DetailedPlaceView: View {
                         .overlay(LinearGradient(gradient: Gradient(colors: [.black.opacity(0.5), .black.opacity(0.4), .black.opacity(0.3),         .black.opacity(0.3), .black.opacity(0.2), .black.opacity(0.1), .clear]), startPoint: .top, endPoint: .bottom)
                                     .frame(height: 80),
                                     alignment: .top)
-                        .overlay(Button(action: {
-                            presentationMode.wrappedValue.dismiss()
-                        }) {
-                            Image(uiImage: UIImage(named: "icArrowLeft").nonNil)
-                        }.frame(width: C.backButtonSize,
-                                height: C.backButtonSize)
-                                    .offset(x: 20, y: 40), alignment: .topLeading)
             }
             .ignoresSafeArea()
             .overlay(PlaceInfoView(place: place), alignment: .bottom)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Image(uiImage: UIImage(named: "icArrowLeft").nonNil)
+                    }
+                                .frame(width: C.backButtonSize,
+                                       height: C.backButtonSize, alignment: .topLeading)
+                }
+            }
         }
     }
 }

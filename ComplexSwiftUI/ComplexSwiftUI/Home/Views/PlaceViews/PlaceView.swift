@@ -27,7 +27,7 @@ struct PlaceView: View {
     var delegate: PlaceViewDelegate?
     
     var body: some View {
-        NavigationLink(destination: DetailedPlaceView(place: place)) {
+        NavigationLink(destination: DetailedPlaceView(place: place).navigationBarHidden(true)) {
             Image(uiImage: place.image)
                 .resizable()
                 .scaledToFill()
