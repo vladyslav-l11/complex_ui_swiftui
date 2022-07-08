@@ -12,6 +12,7 @@ struct ListTabView: View {
     private enum C {
         static let radius: CGFloat = 23
         static let height: CGFloat = 80
+        static let width: CGFloat = UIScreen.main.bounds.width - 40
         static let blurRadius: CGFloat = 5
     }
     
@@ -19,7 +20,18 @@ struct ListTabView: View {
     @State private var itemSelected: Int = 0
     
     var body: some View {
-        HStack(alignment: .top, spacing: UIScreen.main.bounds.width/4-40) {
+        AnyView {
+            
+        }
+        .ignoresSafeArea()
+        .frame(width: C.width, height: C.height)
+        .background(RoundedRectangle(cornerRadius: C.radius)
+                        .foregroundStyle(.ultraThinMaterial)
+                        .shadow(radius: 0.1))
+        .overlay(RoundedRectangle(cornerRadius: C.radius)
+                    .foregroundColor(.white)
+                    .opacity(0.6))
+        .overlay(HStack(alignment: .top, spacing: UIScreen.main.bounds.width/4-40) {
             ForEach(0..<tabs.count) { index in
                 let tab = tabs[index]
                 TabView(image: tab.image, imageSelected: tab.selectedImage, isSelected: .constant(itemSelected == index)) {
@@ -28,14 +40,7 @@ struct ListTabView: View {
                 .padding(.top, 20)
                 .padding(.bottom, 10)
             }
-        }
-        .ignoresSafeArea()
-        .frame(minWidth: 0, maxWidth: .infinity, maxHeight: C.height)
-        .background(RoundedRectangle(cornerRadius: C.radius)
-                        .blur(radius: C.blurRadius)
-                        .shadow(radius: 0.1)
-                        .foregroundColor(.white)
-                        .opacity(0.9))
+        })
     }
 }
 
