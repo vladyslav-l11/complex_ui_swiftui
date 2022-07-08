@@ -18,24 +18,23 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                LazyVStack {
-                    ListPlaceView(userName:     viewModel.user.name, title: "Wanna plan your next trip?", placeList: viewModel.placeList)
+                VStack {
+                    ListPlaceView(userName:  viewModel.user.name, title: "Wanna plan your next trip?", placeList: viewModel.placeList)
                     ListCategoryView(categories: viewModel.categoryList) .padding(.top, 40)
                     ListCategoryItemView(categoryItems: viewModel.categoryItemList)
                         .padding(.top, 40)
                 }
+                .overlay(Button(action: {}) {
+                    Image(uiImage: UIImage(named: "icSearch").nonNil)
+                }.frame(width: C.searchButtonSize,
+                        height: C.searchButtonSize)
+                            .offset(x: -20, y: 40), alignment: .topTrailing)
             }
             .ignoresSafeArea()
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {}) {
-                        Image(uiImage: UIImage(named: "icSearch").nonNil)
-                    }.frame(width: C.searchButtonSize, height: C.searchButtonSize)
-                }
-            }
             .overlay(ListTabView(tabs: viewModel.tabs)
                         .padding(.horizontal, 20)
                         .padding(.bottom, 14), alignment: .bottom)
+            .navigationBarHidden(true)
         }
     }
 }

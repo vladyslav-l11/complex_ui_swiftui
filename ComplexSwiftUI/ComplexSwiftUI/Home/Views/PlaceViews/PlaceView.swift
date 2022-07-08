@@ -11,17 +11,19 @@ struct PlaceView: View {
     
     private enum C {
         static let cornerRadius: CGFloat = 50
+        static let screenWidth: CGFloat = UIScreen.main.bounds.width
     }
     
-    let image: UIImage?
-    let name: String
-    let city: String
-    let country: String
+    @GestureState private var additionalOffsetX: CGFloat = 0
+    @State private var endPointX: CGFloat = 0
+    @State private var isDragging = false
+    let place: Place
     let shouldShowShadow: Bool
     let width: CGFloat
     
     var body: some View {
-            Image(uiImage: image ?? .init())
+        NavigationLink(destination: DetailedPlaceView(place: place)) {
+            Image(uiImage: place.image)
                 .resizable()
                 .scaledToFill()
                 .frame(width: width, height: 450, alignment: .center)
@@ -29,9 +31,9 @@ struct PlaceView: View {
                                 alignment: .bottom)
                 .mask(RoundedCorners(cornerRadius: C.cornerRadius, corners: [.bottomRight, .bottomLeft]))
                 .overlay(VStack(alignment: .leading) {
-                    Text(name)
+                    Text(place.name)
                         .font(.custom("Metropolis-Black", size: 24))
-                    Text("\(city), \(country)")
+                    Text("\(place.city), \(place.country)")
                         .font(.custom("Metropolis-SemiBold", size: 13))
                     }
                     .padding(.leading, 24)
@@ -40,6 +42,23 @@ struct PlaceView: View {
                     .foregroundColor(.white)
                     .multilineTextAlignment(.leading), alignment: .bottomLeading)
                 .ignoresSafeArea()
+                .gesture(DragGesture()
+                            .updating($additionalOffsetX, body: { value, stateOffset, transaction in
+                    isDragging = true
+                    stateOffset = value.translation.width
+                })
+                            .onEnded({ value in
+                    if value.translation.width < -(C.screenWidth/2) {
+                        endPointX = -C.screenWidth
+                    } else if value.translation.width >= C.screenWidth/2 {
+                        endPointX = C.screenWidth
+                    }
+                    isDragging = false
+                }))
+                .animation(.default)
+        }
+        .offset(x: !isDragging ? endPointX : additionalOffsetX)
+        .buttonStyle(FlatLinkStyle())
     }
 }
 
@@ -53,10 +72,16 @@ struct RoundedCorners: Shape {
     }
 }
 
+struct FlatLinkStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+    }
+}
+
 struct PlaceView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            PlaceView(image: UIImage(named: "icWood"), name: "Name", city: "City", country: "Country", shouldShowShadow: true, width: UIScreen.main.bounds.width)
+            PlaceView(place: Place(name: "Name1", country: "Country1", city: "City1", image: UIImage(named: "icWood").nonNil, distance: 6, description: "descr", hotelsCount: 8, restaurantsCount: 7), shouldShowShadow: true, width: UIScreen.main.bounds.width)
         }
     }
 }
