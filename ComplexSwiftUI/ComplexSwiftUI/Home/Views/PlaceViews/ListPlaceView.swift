@@ -9,9 +9,26 @@ import SwiftUI
 
 struct ListPlaceView: View {
     
+    private enum C {
+        static let dotSize: CGFloat = 4
+        static let bigDotSize: CGFloat = 14
+        static let offsetDots: CGFloat = 22
+        static let offsetIndex = 9
+        static let startIndex = 0
+    }
+    
     let userName: String
     let title: String
     @State var placeList: [Place]
+    @State var currentIndex: Int
+    @State var offsetDots: CGFloat = 0
+    
+    init(userName: String, title: String, placeList: [Place]) {
+        self.userName = userName
+        self.title = title
+        self.placeList = placeList
+        currentIndex = placeList.count-1
+    }
     
     var body: some View {
         ZStack {
@@ -52,6 +69,23 @@ struct ListPlaceView: View {
                     .foregroundColor(.white)
                     .multilineTextAlignment(.leading),
                  alignment: .topLeading)
+        .overlay(VStack(alignment: .trailing, spacing: 18) {
+            ForEach(0..<placeList.count) { index in
+                if index == currentIndex {
+                    Image(uiImage: UIImage(named: "icBigDot").nonNil)
+                        .frame(width: C.bigDotSize, height: C.bigDotSize)
+                } else {
+                    Image(uiImage: UIImage(named: "icDot").nonNil)
+                        .frame(width: C.dotSize, height: C.dotSize)
+                        .offset(x: -5)
+                }
+            }
+        }
+                    .frame(width: C.bigDotSize, height: 200, alignment: .bottom)
+                    .offset(y: offsetDots)
+                    .clipped()
+                    .offset(x: -25, y: -45)
+                    .animation(.default), alignment: .bottomTrailing)
     }
 }
 
@@ -67,6 +101,16 @@ extension ListPlaceView: PlaceViewDelegate {
                                    description: firstPlace.description,
                                    hotelsCount: firstPlace.hotelsCount,
                                    restaurantsCount: firstPlace.restaurantsCount))
+            
+            if currentIndex > 0 {
+                currentIndex = currentIndex-1
+                if currentIndex <= placeList.count-C.offsetIndex {
+                    offsetDots = offsetDots+C.offsetDots
+                }
+            } else {
+                currentIndex = placeList.count-1
+                offsetDots = 0
+            }
         }
     }
 }
