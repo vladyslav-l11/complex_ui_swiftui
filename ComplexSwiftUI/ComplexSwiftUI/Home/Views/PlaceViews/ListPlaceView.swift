@@ -39,7 +39,29 @@ struct ListPlaceView: View {
                                       ? UIScreen.main.bounds.width
                                       : (index == placeList.startIndex + 1
                                          ? UIScreen.main.bounds.width - 35
-                                         : UIScreen.main.bounds.width - 70), delegate: self)
+                                         : UIScreen.main.bounds.width - 70)) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                            let firstPlace = placeList.removeFirst()
+                            placeList.append(Place(name: firstPlace.name,
+                                                   country: firstPlace.country,
+                                                   city: firstPlace.city,
+                                                   image: firstPlace.image,
+                                                   distance: firstPlace.distance,
+                                                   description: firstPlace.description,
+                                                   hotelsCount: firstPlace.hotelsCount,
+                                                   restaurantsCount: firstPlace.restaurantsCount))
+                            
+                            if currentIndex > 0 {
+                                currentIndex = currentIndex-1
+                                if currentIndex <= placeList.count-C.offsetIndex {
+                                    offsetDots = offsetDots+C.offsetDots
+                                }
+                            } else {
+                                currentIndex = placeList.count-1
+                                offsetDots = 0
+                            }
+                        }
+                    }
                         .offset(y: -(-CGFloat(index*12)))
                         .opacity(index == placeList.startIndex
                                  ? 1
@@ -86,32 +108,6 @@ struct ListPlaceView: View {
                     .clipped()
                     .offset(x: -25, y: -45)
                     .animation(.default), alignment: .bottomTrailing)
-    }
-}
-
-extension ListPlaceView: PlaceViewDelegate {
-    func didSwiped(_ placeView: PlaceView) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            let firstPlace = placeList.removeFirst()
-            placeList.append(Place(name: firstPlace.name,
-                                   country: firstPlace.country,
-                                   city: firstPlace.city,
-                                   image: firstPlace.image,
-                                   distance: firstPlace.distance,
-                                   description: firstPlace.description,
-                                   hotelsCount: firstPlace.hotelsCount,
-                                   restaurantsCount: firstPlace.restaurantsCount))
-            
-            if currentIndex > 0 {
-                currentIndex = currentIndex-1
-                if currentIndex <= placeList.count-C.offsetIndex {
-                    offsetDots = offsetDots+C.offsetDots
-                }
-            } else {
-                currentIndex = placeList.count-1
-                offsetDots = 0
-            }
-        }
     }
 }
 

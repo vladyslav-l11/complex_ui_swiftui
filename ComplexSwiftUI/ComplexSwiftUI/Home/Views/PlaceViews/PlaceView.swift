@@ -24,7 +24,14 @@ struct PlaceView: View {
     let place: Place
     let shouldShowShadow: Bool
     let width: CGFloat
-    var delegate: PlaceViewDelegate?
+    private let swipe: () -> Void
+    
+    init(place: Place, shouldShowShadow: Bool, width: CGFloat, swipe: @escaping () -> Void) {
+        self.place = place
+        self.shouldShowShadow = shouldShowShadow
+        self.width = width
+        self.swipe = swipe
+    }
     
     var body: some View {
         NavigationLink(destination: DetailedPlaceView(place: place).navigationBarHidden(true)) {
@@ -60,10 +67,10 @@ struct PlaceView: View {
                             .onEnded({ value in
                     if value.translation.width < -(C.screenWidth/2) {
                         endPointX = -C.screenWidth
-                        delegate?.didSwiped(self)
+                        swipe()
                     } else if value.translation.width >= C.screenWidth/2 {
                         endPointX = C.screenWidth
-                        delegate?.didSwiped(self)
+                        swipe()
                     }
                     isDragging = false
                 }))
@@ -93,7 +100,7 @@ struct FlatLinkStyle: ButtonStyle {
 struct PlaceView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            PlaceView(place: Place(name: "Name1", country: "Country1", city: "City1", image: UIImage(named: "icWood").nonNil, distance: 6, description: "descr", hotelsCount: 8, restaurantsCount: 7), shouldShowShadow: true, width: UIScreen.main.bounds.width)
+            PlaceView(place: Place(name: "Name1", country: "Country1", city: "City1", image: UIImage(named: "icWood").nonNil, distance: 6, description: "descr", hotelsCount: 8, restaurantsCount: 7), shouldShowShadow: true, width: UIScreen.main.bounds.width) {}
         }
     }
 }
