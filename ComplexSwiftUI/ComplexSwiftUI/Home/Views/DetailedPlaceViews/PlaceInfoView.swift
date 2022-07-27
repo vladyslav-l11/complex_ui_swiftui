@@ -46,7 +46,7 @@ struct PlaceInfoView: View {
                             .padding(.vertical, 11)
                             .background(RoundedRectangle(cornerRadius: 14).foregroundColor(Color(uiColor: UIColor(named: "blueTen1") ?? .init())))
                     }
-                    .frame(width: .infinity, height: 37)
+                    .frame(height: 37)
                     Group {
                         Text("\(place.restaurantsCount) Restaurants")
                             .font(.custom("Metropolis-Medium", size: 14))
@@ -55,7 +55,7 @@ struct PlaceInfoView: View {
                             .padding(.vertical, 11)
                             .background(RoundedRectangle(cornerRadius: 14).foregroundColor(Color(uiColor: UIColor(named: "blueTen1") ?? .init())))
                     }
-                    .frame(width: .infinity, height: 37)
+                    .frame(height: 37)
                 }
                 .padding(.leading, -6)
                 .padding(.vertical, 12)
