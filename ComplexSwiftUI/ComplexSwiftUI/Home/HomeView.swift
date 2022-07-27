@@ -13,7 +13,7 @@ struct HomeView: View {
         static let searchButtonSize: CGFloat = 27
     }
     
-    let viewModel = HomeViewModel()
+    let viewModel = HomeViewModel.shared
     
     var body: some View {
         NavigationView {

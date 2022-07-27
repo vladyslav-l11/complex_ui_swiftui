@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		270D6BB8285F88E700628D44 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270D6BB7285F88E700628D44 /* TabView.swift */; };
+		270D6BB8285F88E700628D44 /* TabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270D6BB7285F88E700628D44 /* TabItemView.swift */; };
 		270D6BBA285F8E8400628D44 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270D6BB9285F8E8400628D44 /* Tab.swift */; };
 		270D6BBC285F901A00628D44 /* ListTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270D6BBB285F901A00628D44 /* ListTabView.swift */; };
 		270F230A2850B6D800C8FC2B /* ListCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270F23092850B6D800C8FC2B /* ListCategoryView.swift */; };
@@ -49,7 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		270D6BB7285F88E700628D44 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		270D6BB7285F88E700628D44 /* TabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemView.swift; sourceTree = "<group>"; };
 		270D6BB9285F8E8400628D44 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		270D6BBB285F901A00628D44 /* ListTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTabView.swift; sourceTree = "<group>"; };
 		270F23092850B6D800C8FC2B /* ListCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCategoryView.swift; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 		270D6BB6285F788D00628D44 /* TabViews */ = {
 			isa = PBXGroup;
 			children = (
-				270D6BB7285F88E700628D44 /* TabView.swift */,
+				270D6BB7285F88E700628D44 /* TabItemView.swift */,
 				270D6BBB285F901A00628D44 /* ListTabView.swift */,
 			);
 			path = TabViews;
@@ -354,7 +354,7 @@
 				274732D1286B3B1E00F6B4DD /* PlaceInfoView.swift in Sources */,
 				272802D12848AD5E0092A6EF /* HomeViewModel.swift in Sources */,
 				271BC95E284F7A1700D3CFFF /* CategoryView.swift in Sources */,
-				270D6BB8285F88E700628D44 /* TabView.swift in Sources */,
+				270D6BB8285F88E700628D44 /* TabItemView.swift in Sources */,
 				270D6BBA285F8E8400628D44 /* Tab.swift in Sources */,
 				27983A1828522B4F007E941F /* CategoryItemView.swift in Sources */,
 				272802CD2848A8710092A6EF /* Place.swift in Sources */,

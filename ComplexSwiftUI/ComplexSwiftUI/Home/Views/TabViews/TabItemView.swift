@@ -1,5 +1,5 @@
 //
-//  TabView.swift
+//  TabItemView.swift
 //  ComplexSwiftUI
 //
 //  Created by Vladyslav Lysenko on 19.06.2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TabView: View {
+struct TabItemView: View {
     
     let image: UIImage?
     let imageSelected: UIImage?
@@ -42,6 +42,6 @@ struct TabView: View {
 
 struct TabView_Previews: PreviewProvider {
     static var previews: some View {
-        TabView(image: UIImage(named: "icHouse"), imageSelected: UIImage(named: "icHouseSelected"), isSelected: .constant(false)) {}
+        TabItemView(image: UIImage(named: "icHouse"), imageSelected: UIImage(named: "icHouseSelected"), isSelected: .constant(false)) {}
     }
 }

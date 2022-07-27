@@ -14,11 +14,11 @@ struct ListPlaceView: View {
         static let bigDotSize: CGFloat = 14
         static let offsetDots: CGFloat = 22
         static let offsetIndex = 9
-        static let startIndex = 0
     }
     
     let userName: String
     let title: String
+    let startPlaceList: [Place]
     @State var placeList: [Place]
     @State var currentIndex: Int
     @State var offsetDots: CGFloat = 0
@@ -27,6 +27,7 @@ struct ListPlaceView: View {
         self.userName = userName
         self.title = title
         self.placeList = placeList
+        startPlaceList = placeList
         currentIndex = placeList.count-1
     }
     
@@ -50,15 +51,17 @@ struct ListPlaceView: View {
                                                    description: firstPlace.description,
                                                    hotelsCount: firstPlace.hotelsCount,
                                                    restaurantsCount: firstPlace.restaurantsCount))
-                            
                             if currentIndex > 0 {
                                 currentIndex = currentIndex-1
-                                if currentIndex <= placeList.count-C.offsetIndex {
+                                if currentIndex <= placeList.count-C.offsetIndex && currentIndex > 0 {
                                     offsetDots = offsetDots+C.offsetDots
                                 }
                             } else {
                                 currentIndex = placeList.count-1
                                 offsetDots = 0
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                    placeList = startPlaceList
+                                }
                             }
                         }
                     }
@@ -70,6 +73,7 @@ struct ListPlaceView: View {
                                     : (index == placeList.startIndex + 2
                                        ? 0.3
                                        : 0)))
+                        .allowsHitTesting(index == 0)
                 }
             }
         }
@@ -92,7 +96,7 @@ struct ListPlaceView: View {
                     .multilineTextAlignment(.leading),
                  alignment: .topLeading)
         .overlay(VStack(alignment: .trailing, spacing: 18) {
-            ForEach(0..<placeList.count) { index in
+            ForEach(placeList.indices) { index in
                 if index == currentIndex {
                     Image(uiImage: UIImage(named: "icBigDot").nonNil)
                         .frame(width: C.bigDotSize, height: C.bigDotSize)

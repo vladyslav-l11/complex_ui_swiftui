@@ -30,9 +30,9 @@ struct ListTabView: View {
                     .foregroundColor(.white)
                     .opacity(0.6))
         .overlay(HStack(alignment: .top, spacing: UIScreen.main.bounds.width/4-40) {
-            ForEach(0..<tabs.count) { index in
+            ForEach(tabs.indices) { index in
                 let tab = tabs[index]
-                TabView(image: tab.image, imageSelected: tab.selectedImage, isSelected: .constant(itemSelected == index)) {
+                TabItemView(image: tab.image, imageSelected: tab.selectedImage, isSelected: .constant(itemSelected == index)) {
                     itemSelected = index
                 }
                 .padding(.top, 20)

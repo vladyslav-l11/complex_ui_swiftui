@@ -34,7 +34,7 @@ struct PlaceView: View {
     }
     
     var body: some View {
-        NavigationLink(destination: DetailedPlaceView(place: place).navigationBarHidden(true)) {
+        NavigationLink(destination: DetailedPlaceView(selectedPlace: place).navigationBarHidden(true)) {
             Image(uiImage: place.image)
                 .resizable()
                 .scaledToFill()

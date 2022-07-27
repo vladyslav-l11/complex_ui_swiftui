@@ -12,10 +12,10 @@ struct PlaceInfoView: View {
     private enum C {
         static let cornerRadius: CGFloat = 45
         static let blurRadius: CGFloat = 3
+        static let descriptionHeight: CGFloat = 66
     }
     
     let place: Place
-    @State private var contentSize: CGSize = .zero
     
     var body: some View {
         Group {
@@ -35,14 +35,7 @@ struct PlaceInfoView: View {
                             .foregroundColor(Color(UIColor(named: "gray3") ?? .init()))
                             .lineLimit(nil)
                             .fixedSize(horizontal: false, vertical: true)
-                            .overlay(
-                                GeometryReader { geo in
-                                    Color.clear.onAppear {
-                                    contentSize = geo.size
-                                    }
-                                }
-                            )
-                    }.frame(height: contentSize.height > UIScreen.main.bounds.height-470 ? UIScreen.main.bounds.height-470 : contentSize.height)
+                    }.frame(height: C.descriptionHeight)
                 
                 HStack(spacing: 14) {
                     Group {
@@ -89,8 +82,8 @@ struct PlaceInfoView: View {
             .padding(.vertical, 28)
         }
         .frame(width: UIScreen.main.bounds.width,
-                height: .infinity,
-                alignment: .leading)
+               height: 380,
+               alignment: .leading)
         .background(RoundedCorners(cornerRadius: C.cornerRadius, corners: [.topRight, .topLeft])
                         .foregroundStyle(.thinMaterial))
     }

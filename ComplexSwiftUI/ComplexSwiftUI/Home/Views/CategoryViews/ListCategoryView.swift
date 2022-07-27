@@ -15,7 +15,7 @@ struct ListCategoryView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHStack(spacing: 15) {
-                ForEach(0..<categories.count) { index in
+                ForEach(categories.indices) { index in
                     let category = categories[index]
                     CategoryView(name: category.name, image: category.image, imageSelected: category.selectedImage, isSelected: .constant(itemSelected == index)) {
                         itemSelected = index
